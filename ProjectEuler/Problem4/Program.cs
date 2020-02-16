@@ -20,47 +20,25 @@ namespace Problem4
                 for (int j = 100; j < 999; j++)
                 {
                     product = i * j;
-                    if (isPalindrome(product))
+                    int n, reverse = 0, rem;
+                    n = (int)product;
+                    while (n != 0)
                     {
-                        Console.WriteLine("Palindrome: " + product+" is product of "+i+" and "+j);
-                        if (product > highest)
-                            highest = (int)product;
+                        rem = n % 10;
+                        reverse = reverse * 10 + rem;
+                        n /= 10;
                     }
-                        
+                    if (reverse == product && product>highest)
+                        highest = (int)product;
+
                 }
             }
             Console.WriteLine("Highest palindrome is " + highest);
             Console.Read();
         }
 
-        public static bool isPalindrome(long number)
-        {
-            int basamak = number.ToString().Length;
-            double half = Math.Floor((double)(basamak / 2));
-
-
-
-
-
-            int left = int.Parse(number.ToString().Substring(0, (int)half));
-            int divider = (int)Math.Pow(10, (long)half);
-            long right = number % divider;
-
-            int n, reverse = 0, rem;
-            n = (int)right;
-            while (n != 0)
-            {
-                rem = n % 10;
-                reverse = reverse * 10 + rem;
-                n /= 10;
-            }
-
-
-            if (left - reverse == 0)
-                return true;
-
-            return false;
-        }
+      
+       
 
        
     }
