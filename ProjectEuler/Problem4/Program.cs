@@ -14,14 +14,14 @@ namespace Problem4
         {
             //Find the largest palindrome made from the product of two 3-digit numbers.
             int highest = 0;
-            long product;
+            int product;
             for (int i = 100; i <= 999; i++)
             {
                 for (int j = 100; j < 999; j++)
                 {
                     product = i * j;
                     int n, reverse = 0, rem;
-                    n = (int)product;
+                    n = product;
                     while (n != 0)
                     {
                         rem = n % 10;
@@ -29,7 +29,7 @@ namespace Problem4
                         n /= 10;
                     }
                     if (reverse == product && product>highest)
-                        highest = (int)product;
+                        highest = product;
 
                 }
             }
