@@ -40,7 +40,7 @@ namespace Problem8
         {
             double sonuc = 1;
             for (int i = start; i < end; i++)
-            {
+            {""
                 sonuc *= dizi[i];
             }
 
